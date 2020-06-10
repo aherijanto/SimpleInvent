@@ -4,13 +4,13 @@ public class InventModelRv {
     private String item_name;
     private String item_code;
     private int item_qty;
-    private int item_price;
+    private String item_price;
 
 
     public InventModelRv() {
     }
 
-    public InventModelRv(String itemCode,String itemName, int itemPrice){
+    public InventModelRv(String itemCode,String itemName, String itemPrice){
         this.item_code = itemCode;
         this.item_name = itemName;
         this.item_price = itemPrice;
@@ -41,7 +41,7 @@ public class InventModelRv {
         this.item_qty = item_qty;
     }
 
-    public int getItem_price() {
+    public String getItem_price() {
         return item_price;
     }
 

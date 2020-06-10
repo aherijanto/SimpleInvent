@@ -66,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         }
+
+        protected void onPostExecute(ArrayList<InventModelRv> strings) {
+            if (strings != null) {
+                adapterItemList = new ItemSearchAdapter(getApplicationContext(),strings);
+                rvItemList.setAdapter(adapterItemList);
+                dataItemList=strings;
+
+            }
+        }
     } // end Class:FetchItemList
 
 }

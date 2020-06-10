@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/btnAdd"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     app:cardCornerRadius="6dp"
-
-    app:cardUseCompatPadding="true"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +23,22 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="121dp">
+
+            <TextView
+                android:id="@+id/txtItemPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtItemName"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="-1dp"
+                android:layout_toRightOf="@id/itemView"
+                android:gravity="center_horizontal"
+                android:text="Item Price"
+                android:textAlignment="center"
+                android:textColor="#9C27B0"
+                android:textSize="20sp"
+                android:textStyle="normal" />
 
             <ImageView
                 android:id="@+id/itemView"
@@ -45,7 +61,7 @@
 
             <TextView
                 android:id="@+id/txtItemName"
-                android:layout_width="265dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtItemCode"
                 android:layout_marginLeft="3dp"
@@ -54,11 +70,11 @@
                 android:gravity="left"
                 android:text="Item Name"
 
-                android:textSize="24sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtItemPrice"
-                android:layout_width="197dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtItemName"
                 android:layout_marginLeft="1dp"
@@ -71,11 +87,50 @@
                 android:textSize="20sp"
                 android:textStyle="normal" />
 
-            <!-- TextView Desc Menu -->
+            <Button
+                android:id="@+id/btnAddCart"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_below="@id/txtItemPrice"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginRight="3dp"
+                android:background="#3F51B5"
+                android:text="Add to Cart"
+                android:textColor="#F4F1F1"
+                android:textSize="10sp"
+                android:backgrounds="@drawable/round_button"/>
+
+            <EditText
+                android:id="@+id/txtQty"
+                android:layout_width="81dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtItemPrice"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="92dp"
+                android:layout_toLeftOf="@id/btnAddCart"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/txtQtyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtItemPrice"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/itemView"
+                android:gravity="center_horizontal"
+                android:text="Qty"
+                android:textAlignment="center"
+                android:textColor="#9C27B0"
+                android:textSize="20sp"
+                android:textStyle="normal" />
 
         </RelativeLayout>
     </LinearLayout>
-
 
 
 </androidx.cardview.widget.CardView>

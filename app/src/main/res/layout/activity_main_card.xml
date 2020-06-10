@@ -100,8 +100,7 @@
                 android:background="#3F51B5"
                 android:text="Add to Cart"
                 android:textColor="#F4F1F1"
-                android:textSize="10sp"
-                android:backgrounds="@drawable/round_button"/>
+                android:textSize="10sp"></Button>
 
             <EditText
                 android:id="@+id/txtQty"

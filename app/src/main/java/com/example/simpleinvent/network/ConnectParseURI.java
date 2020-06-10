@@ -12,14 +12,14 @@ import java.util.Scanner;
 import static android.content.ContentValues.TAG;
 
 public class ConnectParseURI {
-    private static final String urlJSON =
-            "https://senang.mimoapps.xyz/apis/getitemlist.php?itemname=gula";
+    //private static final String urlJSON =
+         //   "https://senang.mimoapps.xyz/apis/getlistitems.php?itemname=gula";
 
-    public static URL buildURL(){
+    public static URL buildURL(String urlQuery){
         URL url=null;
 
         try {
-            url = new URL(urlJSON.toString());
+            url = new URL(urlQuery.toString());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

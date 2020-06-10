@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.simpleinvent.JSON.ItemListJSON;
 import com.example.simpleinvent.adapters.ItemSearchAdapter;
@@ -20,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvItemList;
     private ItemSearchAdapter adapterItemList;
     private ArrayList<InventModelRv> dataItemList;
+    private EditText txtSearchItem;
+    private Button btnSearchItem;
+    public String mySearch;
+
     private AppCompatActivity activity=MainActivity.this;
 
     @Override
@@ -38,13 +45,36 @@ public class MainActivity extends AppCompatActivity {
         rvItemList.setAdapter(adapterItemList);
 
         adapterItemList.notifyDataSetChanged();
+        btnSearchItem = (Button) findViewById(R.id.btnSearch);
         if (savedInstanceState == null) {
-            new FetchItemList().execute();
+            btnSearchItem.setOnClickListener( new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    txtSearchItem = (EditText) findViewById(R.id.txtSearch);
+
+                    new FetchItemList().execute();
+                }
+            });
+            //new FetchItemList().execute();
         } else {
             //ArrayList parcelRecipe = savedInstanceState.getParcelableArrayList(MY_KEY);
             rvItemList.setAdapter(new ItemSearchAdapter(getApplicationContext(), dataItemList));
 
         }
+
+
+        btnSearchItem.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                txtSearchItem = (EditText) findViewById(R.id.txtSearch);
+                String mySearch = txtSearchItem.getText().toString();
+                new FetchItemList().execute();
+            }
+        });
     }//end of onCreate
 
     public class FetchItemList extends AsyncTask<String,Void,ArrayList<InventModelRv>> {
@@ -52,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected ArrayList<InventModelRv> doInBackground(String... params) {
 
-            URL ItemDataUrl = ConnectParseURI.buildURL();
-
+            URL ItemDataUrl = ConnectParseURI.buildURL("https://senang.mimoapps.xyz/apis/getlistitems.php?itemname=" + txtSearchItem.getText().toString());
+                                                        //https://senang.mimoapps.xyz/apis/getlistitems.php?itemname=
             try {
                 String ItemListResponse = ConnectParseURI.getResponseFromHttpUrl(ItemDataUrl);
 

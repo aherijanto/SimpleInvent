@@ -28,11 +28,11 @@
 
             <ImageView
                 android:id="@+id/itemView"
-                android:layout_width="75dp"
-                android:layout_height="73dp"
+                android:layout_width="55dp"
+                android:layout_height="51dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/goods"/>
+                android:background="@drawable/goods" />
 
 
             <TextView
@@ -43,7 +43,6 @@
 
                 android:width="100dp"
 
-                android:gravity="right"
                 android:text="Item Code" />
 
             <!-- TextView Nama Menu -->
@@ -93,14 +92,15 @@
 
             <EditText
                 android:id="@+id/txtQty"
-                android:layout_width="86dp"
-                android:layout_height="35dp"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/txtItemPrice"
-                android:layout_marginTop="6dp"
-                android:layout_marginRight="13dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
                 android:layout_toLeftOf="@id/btnAddCart"
                 android:ems="10"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/txtQtyText"

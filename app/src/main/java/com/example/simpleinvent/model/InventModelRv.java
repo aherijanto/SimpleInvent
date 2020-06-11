@@ -3,7 +3,7 @@ package com.example.simpleinvent.model;
 public class InventModelRv {
     private String item_name;
     private String item_code;
-    private int item_qty;
+    private String item_qty;
     private String item_price;
 
 
@@ -33,11 +33,11 @@ public class InventModelRv {
         this.item_code = item_code;
     }
 
-    public int getItem_qty() {
+    public String getItem_qty() {
         return item_qty;
     }
 
-    public void setItem_qty(int item_qty) {
+    public void setItem_qty(String item_qty) {
         this.item_qty = item_qty;
     }
 

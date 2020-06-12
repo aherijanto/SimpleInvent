@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,27 +9,33 @@
 
     <EditText
         android:id="@+id/txtSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="248dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/roundedittext"
         android:ellipsize="none"
         android:ems="10"
         android:hint="Type Name"
         android:inputType="textPersonName"
-
+        android:paddingLeft="10dp"
         android:textColor="#9C27B0"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+
+        />
+
 
     <Button
         android:id="@+id/btnSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="74dp"
+        android:layout_height="35dp"
         android:layout_alignRight="@id/txtSearch"
         android:layout_marginLeft="60dp"
-        android:layout_marginRight="-110dp"
-        android:background="#9365E4"
+        android:layout_marginRight="-96dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/searchbutton"
         android:text="Search"
         android:textColor="#FAF8F8" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearchItems"
@@ -37,24 +44,6 @@
         android:layout_below="@id/btnSearch"
         android:layout_marginTop="20dp" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignTop="@id/rvSearchItems"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="right"
-        android:layout_marginTop="555dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:contentDescription="@string/submit"
-        android:cropToPadding="true"
-        android:drawingCacheQuality="auto"
-        android:scaleType="center"
-        android:src="@drawable/cart"
-        app:elevation="2dp"
-        app:fabSize="auto" />
 
 
 </RelativeLayout>

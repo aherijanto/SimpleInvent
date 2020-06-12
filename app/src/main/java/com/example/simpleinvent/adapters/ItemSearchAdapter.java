@@ -83,6 +83,7 @@ public class ItemSearchAdapter extends RecyclerView.Adapter<ItemSearchAdapter.It
                         //Uploader1 task = new OrderAdapter.Uploader1();
                         //task.execute(new String[] { ServerURL, xCMenu,cPRCMenu,cQTY });
                         detailCart.add(setOrder);
+                        detailCart.size();
                     }
                 }
             });

@@ -99,23 +99,9 @@
                 android:layout_marginRight="15dp"
                 android:layout_toLeftOf="@id/btnAddCart"
                 android:ems="10"
+                android:hint="Qty"
                 android:inputType="numberDecimal"
                 android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/txtQtyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtItemPrice"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/itemView"
-                android:gravity="center_horizontal"
-                android:text="Quantity"
-                android:textAlignment="center"
-                android:textColor="#9C27B0"
-                android:textSize="20sp"
-                android:textStyle="normal" />
 
         </RelativeLayout>
     </LinearLayout>

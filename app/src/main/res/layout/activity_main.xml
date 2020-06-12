@@ -29,14 +29,32 @@
         android:text="Search"
         android:textColor="#FAF8F8" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearchItems"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/btnSearch"
-        android:layout_marginTop="27dp" />
+        android:layout_marginTop="20dp" />
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@id/rvSearchItems"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginTop="555dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:contentDescription="@string/submit"
+        android:cropToPadding="true"
+        android:drawingCacheQuality="auto"
+        android:scaleType="center"
+        android:src="@drawable/cart"
+        app:elevation="2dp"
+        app:fabSize="auto" />
 
 
 </RelativeLayout>

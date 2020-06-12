@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimpleInvent</string>
+    <string name="submit">submit</string>
 </resources>

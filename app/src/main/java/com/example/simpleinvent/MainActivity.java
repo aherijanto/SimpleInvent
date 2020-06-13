@@ -12,6 +12,7 @@ import android.widget.EditText;
 
 import com.example.simpleinvent.JSON.ItemListJSON;
 import com.example.simpleinvent.adapters.ItemSearchAdapter;
+import com.example.simpleinvent.model.DetailOrderModel;
 import com.example.simpleinvent.model.InventModelRv;
 import com.example.simpleinvent.network.ConnectParseURI;
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public String mySearch;
 
     private AppCompatActivity activity=MainActivity.this;
-
+    public ArrayList<DetailOrderModel> detailCart=new ArrayList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

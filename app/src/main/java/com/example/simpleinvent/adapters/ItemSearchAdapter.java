@@ -2,7 +2,7 @@ package com.example.simpleinvent.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.SparseIntArray;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +54,7 @@ public class ItemSearchAdapter extends RecyclerView.Adapter<ItemSearchAdapter.It
         private TextView txtItemName;
         private TextView txtItemPrice;
         private ImageView imgItemView;
+
         public ArrayList<DetailOrderModel> detailCart=new ArrayList();
         public ItemSearchViewHolder(View itemView) {
             super(itemView);

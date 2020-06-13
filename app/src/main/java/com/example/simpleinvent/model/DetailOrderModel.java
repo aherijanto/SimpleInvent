@@ -1,5 +1,7 @@
 package com.example.simpleinvent.model;
 
+import android.app.Application;
+
 public class DetailOrderModel {
     private String item_code;
     private String item_name;

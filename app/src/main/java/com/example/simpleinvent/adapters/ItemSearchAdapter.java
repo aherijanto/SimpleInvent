@@ -12,16 +12,19 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.simpleinvent.MainActivity;
 import com.example.simpleinvent.R;
 import com.example.simpleinvent.model.DetailOrderModel;
 import com.example.simpleinvent.model.InventModelRv;
+import com.example.simpleinvent.onClickedItem;
 
 import java.util.ArrayList;
 
-public class ItemSearchAdapter extends RecyclerView.Adapter<ItemSearchAdapter.ItemSearchViewHolder> {
-
+public class ItemSearchAdapter extends RecyclerView.Adapter<ItemSearchAdapter.ItemSearchViewHolder> implements onClickedItem {
+    private onClickedItem onClick;
     private Context mContext;
     private ArrayList<InventModelRv> itemList;
+    public ArrayList<DetailOrderModel> detailCart=new ArrayList();
 
     public ItemSearchAdapter(Context xFBContext, ArrayList<InventModelRv> itemList) {
         this.mContext=xFBContext;
@@ -49,13 +52,18 @@ public class ItemSearchAdapter extends RecyclerView.Adapter<ItemSearchAdapter.It
         return (itemList != null) ? itemList.size() : 0;
     }
 
+    @Override
+    public void onItemClick(int position) {
+        onClick.onItemClick(position);
+    }
+
     public class ItemSearchViewHolder extends RecyclerView.ViewHolder{
         private TextView txtItemCode;
         private TextView txtItemName;
         private TextView txtItemPrice;
         private ImageView imgItemView;
 
-        public ArrayList<DetailOrderModel> detailCart=new ArrayList();
+
         public ItemSearchViewHolder(View itemView) {
             super(itemView);
             txtItemCode=(TextView) itemView.findViewById(R.id.txtItemCode);
@@ -66,25 +74,25 @@ public class ItemSearchAdapter extends RecyclerView.Adapter<ItemSearchAdapter.It
             Button myButton = (Button) itemView.findViewById(R.id.btnAddCart);
             myButton.setOnClickListener(new View.OnClickListener() {
 
-
-
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
-                    Intent intent = new Intent();
+                      // Intent intent = new Intent();
 
                     if (pos != RecyclerView.NO_POSITION) {
 
                         InventModelRv clickeddataItem = itemList.get(pos);
-                        DetailOrderModel setOrder = new DetailOrderModel();
+                       // DetailOrderModel setOrder = new DetailOrderModel();
 
-                        setOrder.setItem_code(clickeddataItem.getItem_code());
-                        setOrder.setItem_name(clickeddataItem.getItem_name());
-                        setOrder.setItem_price(clickeddataItem.getItem_price());
-                        setOrder.setItem_qty(clickeddataItem.getItem_qty());
-                        //Uploader1 task = new OrderAdapter.Uploader1();
-                        //task.execute(new String[] { ServerURL, xCMenu,cPRCMenu,cQTY });
-                        detailCart.add(setOrder);
-                        detailCart.size();
+                        //setOrder.setItem_code(clickeddataItem.getItem_code());
+                        //setOrder.setItem_name(clickeddataItem.getItem_name());
+                        //setOrder.setItem_price(clickeddataItem.getItem_price());
+                        //setOrder.setItem_qty(clickeddataItem.getItem_qty());
+
+                        MainActivity.dataItemList.get(getAdapterPosition()).setItem_code(clickeddataItem.getItem_code());
+                        MainActivity.dataItemList.get(getAdapterPosition()).setItem_name(clickeddataItem.getItem_name());
+                        MainActivity.dataItemList.get(getAdapterPosition()).setItem_price(clickeddataItem.getItem_price());
+                        MainActivity.dataItemList.get(getAdapterPosition()).setItem_qty(clickeddataItem.getItem_qty());
+
                     }
                 }
             });

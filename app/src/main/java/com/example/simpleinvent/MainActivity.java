@@ -1,9 +1,11 @@
 package com.example.simpleinvent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -23,13 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rvItemList;
     private ItemSearchAdapter adapterItemList;
-    private ArrayList<InventModelRv> dataItemList;
+    public static  ArrayList<InventModelRv> dataItemList;
     private EditText txtSearchItem;
     private Button btnSearchItem;
+    private Button btnAdd;
+    
     public String mySearch;
+    public ArrayList<InventModelRv> me_Cart = new ArrayList<>();
+
+
 
     private AppCompatActivity activity=MainActivity.this;
-    public ArrayList<DetailOrderModel> detailCart=new ArrayList();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         rvItemList = (RecyclerView) findViewById(R.id.rvSearchItems);
 
+
         adapterItemList = new ItemSearchAdapter(this.getApplicationContext(),dataItemList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         //GridLayoutManager gridLayoutManager=new GridLayoutManager(MasterMenu.this,2);
@@ -46,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         rvItemList.setAdapter(adapterItemList);
 
         adapterItemList.notifyDataSetChanged();
-        btnSearchItem = (Button) findViewById(R.id.btnSearch);
+
         if (savedInstanceState == null) {
             btnSearchItem.setOnClickListener( new View.OnClickListener() {
 
@@ -56,12 +64,14 @@ public class MainActivity extends AppCompatActivity {
                     txtSearchItem = (EditText) findViewById(R.id.txtSearch);
 
                     new FetchItemList().execute();
+
                 }
             });
             //new FetchItemList().execute();
         } else {
             //ArrayList parcelRecipe = savedInstanceState.getParcelableArrayList(MY_KEY);
             rvItemList.setAdapter(new ItemSearchAdapter(getApplicationContext(), dataItemList));
+
 
         }
 
@@ -76,6 +86,11 @@ public class MainActivity extends AppCompatActivity {
                 new FetchItemList().execute();
             }
         });
+        
+
+
+
+
     }//end of onCreate
 
     public class FetchItemList extends AsyncTask<String,Void,ArrayList<InventModelRv>> {
@@ -106,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
+
+
     } // end Class:FetchItemList
 
 }
